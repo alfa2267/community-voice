@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Votenoir — Vote Your Favorite</title>
-    <meta name="description" content="A sleek, animated voting site inspired by Iconoir styling." />
+    <title>Community Voice — Shape Your Neighborhood</title>
+    <meta name="description" content="Vote on community programs, initiatives, and ideas. Your voice matters in building a better neighborhood." />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,11 +23,11 @@
             <path d="M7 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
             <path d="M12 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
           </svg>
-          <img class="brand-text" src="./assets/logo.svg" alt="Votenoir" />
+          <span class="brand-text" style="font-weight: 700; font-size: 1.2em;">Community Voice</span>
         </a>
         <nav class="nav">
-          <a href="#pick" class="nav-link">Pick</a>
-          <a href="#vote" class="nav-link">Vote</a>
+          <a href="#pick" class="nav-link">Programs</a>
+          <a href="#vote" class="nav-link">Polls</a>
           <a href="#results" class="nav-link">Results</a>
           <a href="#about" class="nav-link">About</a>
           <button class="hamburger" id="menuToggle" aria-label="Menu">
@@ -51,11 +51,11 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <h1 class="hero-line">Say hello</h1>
-        <h1 class="hero-line accent">to your new free voting hub.</h1>
+        <h1 class="hero-line">Shape your</h1>
+        <h1 class="hero-line accent">community's future.</h1>
         <p class="subtitle">
-          A high-quality, minimalist experience for instant polls. Smooth animations. Clean typography.
-          100% free.
+          Vote on community programs, initiatives, and ideas. Your voice matters in building
+          a better neighborhood together.
         </p>
         <div class="hero-cta">
           <a class="btn primary" href="#vote">Start Voting</a>
@@ -67,97 +67,128 @@
     <!-- Pick Grid (filter-like) -->
     <section id="pick" class="pick">
       <div class="container">
-        <h2 class="section-title">Pick Items to Vote On</h2>
-        <p class="section-subtitle">Hover an item to choose. Top button = Yes, bottom button = No.</p>
-        <div class="filters" role="tablist" aria-label="Filter icons">
+        <h2 class="section-title">Community Programs & Ideas</h2>
+        <p class="section-subtitle">Review each proposal and cast your vote. Hover to see + (support) and - (oppose) options.</p>
+        <div class="filters" role="tablist" aria-label="Filter programs">
           <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="filter-btn" data-filter="3d" role="tab" aria-selected="false">3D Editor</button>
-          <button class="filter-btn" data-filter="geometry" role="tab" aria-selected="false">Geometry</button>
-          <button class="filter-btn" data-filter="shapes" role="tab" aria-selected="false">Shapes</button>
+          <button class="filter-btn" data-filter="parks" role="tab" aria-selected="false">Parks</button>
+          <button class="filter-btn" data-filter="events" role="tab" aria-selected="false">Events</button>
+          <button class="filter-btn" data-filter="services" role="tab" aria-selected="false">Services</button>
         </div>
 
         <div class="pick-layout">
           <div class="pick-main">
             <div class="filter-grid">
-          <!-- Sample tiles (replace with real items/images/icons) -->
-          <div class="tile" data-item-id="arc3d" data-tags="3d,geometry">
+          <!-- Community Programs & Ideas -->
+          <div class="tile" data-item-id="community-garden" data-tags="parks,environment">
             <div class="tile-visual">
               <div class="tile-canvas">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22 16C22 10.48 17.52 6 12 6C6.48 6 2 10.48 2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M5 22C5 17.58 8.58 14 13 14S21 17.58 21 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <div class="tile-overlay">
-                <button class="tile-action yes" data-pick="yes">Yes</button>
-                <button class="tile-action no" data-pick="no">No</button>
-                <div class="tile-tools">
-                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
-                </div>
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
               </div>
             </div>
-            <div class="tile-title">arc3d</div>
+            <div class="tile-title">Community Garden</div>
           </div>
 
-          <div class="tile" data-item-id="box3d" data-tags="3d,shapes">
+          <div class="tile" data-item-id="bike-lanes" data-tags="services,transportation">
             <div class="tile-visual">
               <div class="tile-canvas">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 7L12 2L21 7V17L12 22L3 17V7Z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="18.5" cy="17.5" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="5.5" cy="17.5" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M15 6.5L17 9L12 9L10 6.5L8 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 9V14L15.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div class="tile-overlay">
-                <button class="tile-action yes" data-pick="yes">Yes</button>
-                <button class="tile-action no" data-pick="no">No</button>
-                <div class="tile-tools">
-                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
-                </div>
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
               </div>
             </div>
-            <div class="tile-title">box3d</div>
+            <div class="tile-title">Protected Bike Lanes</div>
           </div>
 
-          <div class="tile" data-item-id="curve-array" data-tags="geometry,shapes">
+          <div class="tile" data-item-id="farmers-market" data-tags="events,community">
             <div class="tile-visual">
               <div class="tile-canvas">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 12C6 6 18 6 22 12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 21H21L18 6H6L3 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M6 6V4C6 3.45 6.45 3 7 3H17C17.55 3 18 3.45 18 4V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div class="tile-overlay">
-                <button class="tile-action yes" data-pick="yes">Yes</button>
-                <button class="tile-action no" data-pick="no">No</button>
-                <div class="tile-tools">
-                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
-                </div>
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
               </div>
             </div>
-            <div class="tile-title">curve-array</div>
+            <div class="tile-title">Weekly Farmers Market</div>
           </div>
 
-          <div class="tile" data-item-id="extrude" data-tags="3d,geometry">
+          <div class="tile" data-item-id="playground-upgrade" data-tags="parks,families">
             <div class="tile-visual">
               <div class="tile-canvas">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="4" y="16" width="16" height="6" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M8 16V12C8 10.9 8.9 10 10 10H14C15.1 10 16 10.9 16 12V16" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 10V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="12" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/>
                 </svg>
               </div>
               <div class="tile-overlay">
-                <button class="tile-action yes" data-pick="yes">Yes</button>
-                <button class="tile-action no" data-pick="no">No</button>
-                <div class="tile-tools">
-                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
-                </div>
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
               </div>
             </div>
-            <div class="tile-title">extrude</div>
+            <div class="tile-title">Playground Upgrade</div>
+          </div>
+
+          <div class="tile" data-item-id="youth-center" data-tags="services,youth">
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 10H21" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7 6V4C7 3.45 7.45 3 8 3H16C16.55 3 17 3.45 17 4V6" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="9" cy="14" r="2" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
+              </div>
+            </div>
+            <div class="tile-title">Youth Activity Center</div>
+          </div>
+
+          <div class="tile" data-item-id="street-lighting" data-tags="services,safety">
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4Z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 12V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M8 22H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">+</button>
+                <button class="tile-action no" data-pick="no">-</button>
+              </div>
+            </div>
+            <div class="tile-title">LED Street Lighting</div>
           </div>
         </div>
         <div class="pick-foot">
           <span class="muted" id="pick-summary" aria-live="polite"></span>
+          <button id="submitPicks" class="btn primary" style="margin-top: 16px;" disabled>Submit Picks</button>
         </div>
       </div>
       <aside class="pick-aside">
@@ -165,26 +196,23 @@
           <div class="aside-card search-card">
             <input id="pick-search" class="search-input" type="search" placeholder="Search..." aria-label="Search items" />
           </div>
-          <div class="aside-card sponsor-card" aria-label="Our sponsor">
-            <div class="sponsor-mark">⚡</div>
-            <div class="sponsor-title">Expand Your Icon Collection</div>
-            <p class="muted">with Streamline</p>
-            <button class="btn ghost small" type="button">170,000 Vector Icons</button>
-            <div class="muted tiny">Our sponsor</div>
+          <div class="aside-card sponsor-card" aria-label="Community info">
+            <div class="sponsor-mark">🏘️</div>
+            <div class="sponsor-title">Get Involved</div>
+            <p class="muted">Join local meetings</p>
+            <button class="btn ghost small" type="button">Monthly Town Halls</button>
+            <div class="muted tiny">Every 2nd Tuesday</div>
           </div>
           <div class="aside-card customize-card">
-            <div class="aside-title">Customize</div>
+            <div class="aside-title">Voting Tips</div>
             <div class="aside-control">
-              <label for="opt-size">Optical Size</label>
-              <input id="opt-size" type="range" min="16" max="48" value="24" />
+              <p class="muted">✓ Review all proposals carefully</p>
             </div>
             <div class="aside-control">
-              <label for="stroke">Stroke Weight</label>
-              <input id="stroke" type="range" min="1" max="3" step="0.1" value="1.5" />
+              <p class="muted">✓ Consider community impact</p>
             </div>
             <div class="aside-control">
-              <label for="color">Color</label>
-              <input id="color" type="color" value="#0c0c0c" />
+              <p class="muted">✓ One vote per device/person</p>
             </div>
           </div>
         </div>
@@ -197,20 +225,135 @@
     <section class="stats">
       <div class="container stats-grid">
         <div class="stat">
-          <div class="stat-number" data-count-to="1671">0</div>
-          <div class="stat-label">votes available right now</div>
+          <div class="stat-number" data-count-to="127">0</div>
+          <div class="stat-label">community members engaged</div>
         </div>
         <div class="stat">
-          <div class="stat-number" data-count-to="100">0%</div>
-          <div class="stat-label">free and open</div>
+          <div class="stat-number" data-count-to="18">0</div>
+          <div class="stat-label">programs under review</div>
         </div>
         <div class="stat">
-          <div class="stat-number" data-count-to="109">0K</div>
-          <div class="stat-label">page views/month</div>
+          <div class="stat-number" data-count-to="85">0%</div>
+          <div class="stat-label">voter participation rate</div>
         </div>
         <div class="stat">
-          <div class="stat-number" data-count-to="41">0K</div>
-          <div class="stat-label">happy voters</div>
+          <div class="stat-number" data-count-to="12">0</div>
+          <div class="stat-label">initiatives approved</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About You & Voting Info -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-layout">
+          <!-- Voter Profile Card (1/4 width) -->
+          <div class="voter-profile">
+            <div class="profile-header">
+              <div class="profile-avatar">👤</div>
+              <h3>Your Profile</h3>
+            </div>
+            
+            <div class="profile-form">
+              <div class="form-group compact">
+                <label for="neighborhood">Area</label>
+                <select id="neighborhood" class="form-control small">
+                  <option value="">Select...</option>
+                  <option value="downtown">Downtown</option>
+                  <option value="north-hills">North Hills</option>
+                  <option value="riverside">Riverside</option>
+                  <option value="westside">Westside</option>
+                  <option value="suburbs">Suburbs</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group compact">
+                <label for="residency">Residency</label>
+                <select id="residency" class="form-control small">
+                  <option value="">Duration...</option>
+                  <option value="less-than-1">< 1 year</option>
+                  <option value="1-3">1-3 years</option>
+                  <option value="3-10">3-10 years</option>
+                  <option value="more-than-10">10+ years</option>
+                  <option value="born-here">Born here</option>
+                </select>
+              </div>
+              
+              <div class="form-group compact">
+                <label for="interest">Priority</label>
+                <select id="interest" class="form-control small">
+                  <option value="">Interest...</option>
+                  <option value="safety">Safety</option>
+                  <option value="education">Education</option>
+                  <option value="environment">Environment</option>
+                  <option value="transportation">Transport</option>
+                  <option value="recreation">Recreation</option>
+                  <option value="economy">Economy</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-label">Votes Cast</span>
+                <span class="stat-value" id="votesCount">0</span>
+              </div>
+            </div>
+            
+            <div class="profile-actions">
+              <button id="exportData" class="btn ghost small">Export Voting Data</button>
+            </div>
+          </div>
+          
+          <!-- About the Items (3/4 width) -->
+          <div class="about-items">
+            <h2 class="section-title">About the Items You're Voting On</h2>
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-icon">🌱</div>
+                <div class="info-content">
+                  <h4>Community Garden</h4>
+                  <p>A shared green space where residents can grow vegetables, herbs, and flowers together. The proposed location is the vacant lot on Maple Street, with estimated setup cost of $15,000.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">🚴</div>
+                <div class="info-content">
+                  <h4>Protected Bike Lanes</h4>
+                  <p>Dedicated cycling infrastructure with physical barriers separating bikes from traffic. The proposal covers Main Street from the school to downtown, estimated cost of $45,000.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">🛒</div>
+                <div class="info-content">
+                  <h4>Weekly Farmers Market</h4>
+                  <p>Regular market for local vendors to sell fresh produce, crafts, and prepared foods. Proposed location is the Town Square every Saturday morning, minimal setup cost.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">🛝</div>
+                <div class="info-content">
+                  <h4>Playground Upgrade</h4>
+                  <p>Modern, accessible playground equipment including inclusive designs for children with disabilities. Located at Central Park, estimated cost of $35,000.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">🏢</div>
+                <div class="info-content">
+                  <h4>Youth Activity Center</h4>
+                  <p>After-school and weekend programs including sports, arts, and tutoring. Proposed renovation of the old library building, estimated cost of $80,000.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">💡</div>
+                <div class="info-content">
+                  <h4>LED Street Lighting</h4>
+                  <p>Energy-efficient LED streetlights to improve safety and reduce electricity costs. Covers all residential streets in the downtown area, estimated cost of $25,000.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -218,35 +361,40 @@
     <!-- Vote cards -->
     <section id="vote" class="vote">
       <div class="container">
-        <h2 class="section-title">Today’s Poll</h2>
-        <p class="section-subtitle">Pick your favorite. One vote per device. Results update instantly.</p>
+        <h2 class="section-title">Community Questions</h2>
+        <p class="section-subtitle">Share your opinion on important community matters. One vote per device.</p>
 
         <div class="cards">
-          <!-- Card Template Example -->
-          <article class="card" data-poll-id="best-icon-pack">
+          <!-- Community Poll Examples -->
+          <article class="card" data-poll-id="budget-priority">
             <div class="card-head">
-              <h3 class="card-title">Best Minimal Icon Pack</h3>
-              <span class="badge">Design</span>
+              <h3 class="card-title">Next Year's Budget Priority</h3>
+              <span class="badge">Budget</span>
             </div>
-            <p class="card-desc">Which icon style do you prefer for your next project?</p>
+            <p class="card-desc">What should the community prioritize with next year's budget allocation?</p>
             <div class="options">
-              <button class="option" data-option="A">
+              <button class="option" data-option="Infrastructure">
                 <span class="dot"></span>
-                Iconoir-style
+                Infrastructure & Roads
               </button>
-              <button class="option" data-option="B">
+              <button class="option" data-option="Parks">
                 <span class="dot"></span>
-                Material-style
+                Parks & Recreation
               </button>
-              <button class="option" data-option="C">
+              <button class="option" data-option="Safety">
                 <span class="dot"></span>
-                Feather-style
+                Public Safety
+              </button>
+              <button class="option" data-option="Education">
+                <span class="dot"></span>
+                Education Programs
               </button>
             </div>
             <div class="results hidden">
-              <div class="bar" data-option="A"><span class="fill"></span><span class="label">Iconoir-style</span><span class="value">0%</span></div>
-              <div class="bar" data-option="B"><span class="fill"></span><span class="label">Material-style</span><span class="value">0%</span></div>
-              <div class="bar" data-option="C"><span class="fill"></span><span class="label">Feather-style</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Infrastructure"><span class="fill"></span><span class="label">Infrastructure & Roads</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Parks"><span class="fill"></span><span class="label">Parks & Recreation</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Safety"><span class="fill"></span><span class="label">Public Safety</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Education"><span class="fill"></span><span class="label">Education Programs</span><span class="value">0%</span></div>
             </div>
             <div class="foot">
               <button class="btn ghost show-results">Show Results</button>
@@ -254,21 +402,21 @@
             </div>
           </article>
 
-          <article class="card" data-poll-id="best-framework">
+          <article class="card" data-poll-id="community-events">
             <div class="card-head">
-              <h3 class="card-title">Frontend Framework You Love</h3>
-              <span class="badge">Web</span>
+              <h3 class="card-title">Preferred Community Event Time</h3>
+              <span class="badge">Events</span>
             </div>
-            <p class="card-desc">Pick one to build a delightful UI next.</p>
+            <p class="card-desc">When would you most likely attend community events and gatherings?</p>
             <div class="options">
-              <button class="option" data-option="React"><span class="dot"></span>React</button>
-              <button class="option" data-option="Vue"><span class="dot"></span>Vue</button>
-              <button class="option" data-option="Svelte"><span class="dot"></span>Svelte</button>
+              <button class="option" data-option="Weekend-Morning"><span class="dot"></span>Weekend Mornings</button>
+              <button class="option" data-option="Weekend-Evening"><span class="dot"></span>Weekend Evenings</button>
+              <button class="option" data-option="Weekday-Evening"><span class="dot"></span>Weekday Evenings</button>
             </div>
             <div class="results hidden">
-              <div class="bar" data-option="React"><span class="fill"></span><span class="label">React</span><span class="value">0%</span></div>
-              <div class="bar" data-option="Vue"><span class="fill"></span><span class="label">Vue</span><span class="value">0%</span></div>
-              <div class="bar" data-option="Svelte"><span class="fill"></span><span class="label">Svelte</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Weekend-Morning"><span class="fill"></span><span class="label">Weekend Mornings</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Weekend-Evening"><span class="fill"></span><span class="label">Weekend Evenings</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Weekday-Evening"><span class="fill"></span><span class="label">Weekday Evenings</span><span class="value">0%</span></div>
             </div>
             <div class="foot">
               <button class="btn ghost show-results">Show Results</button>
@@ -283,29 +431,164 @@
     <section id="results" class="results-cta">
       <div class="container">
         <h2 class="section-title">Live Results</h2>
-        <p class="section-subtitle">Numbers update on vote. Stored locally for demo.</p>
-        <a class="btn primary" href="#vote">Vote Again (another poll)</a>
+        <p class="section-subtitle">See how your community is voting. Results update in real-time.</p>
+        <a class="btn primary" href="#vote">Vote on More Issues</a>
+        <button id="resetVotes" class="btn ghost" type="button" aria-label="Reset all votes">Reset All Votes</button>
+      </div>
+    </section>
+
+    <!-- Monthly Town Halls -->
+    <section id="town-halls" class="town-halls">
+      <div class="container">
+        <h2 class="section-title">Monthly Town Halls</h2>
+        <p class="section-subtitle">Join us for community discussions and decision-making sessions</p>
+        
+        <div class="calendar-grid">
+          <div class="event-card upcoming">
+            <div class="event-date">
+              <div class="month">FEB</div>
+              <div class="day">13</div>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Community Budget Planning</h4>
+              <div class="event-time">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                7:00 PM - 9:00 PM
+              </div>
+              <div class="event-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Community Center, Main Hall
+              </div>
+              <p class="event-description">Discuss and vote on next year's community budget priorities. Your input shapes local spending decisions.</p>
+              <div class="event-tags">
+                <span class="tag">Budget</span>
+                <span class="tag">Planning</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="event-card">
+            <div class="event-date">
+              <div class="month">MAR</div>
+              <div class="day">13</div>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Parks & Recreation Updates</h4>
+              <div class="event-time">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                7:00 PM - 9:00 PM
+              </div>
+              <div class="event-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Community Center, Main Hall
+              </div>
+              <p class="event-description">Review progress on community garden, playground upgrades, and discuss new recreational programs for all ages.</p>
+              <div class="event-tags">
+                <span class="tag">Parks</span>
+                <span class="tag">Recreation</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="event-card">
+            <div class="event-date">
+              <div class="month">APR</div>
+              <div class="day">10</div>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Transportation & Safety Forum</h4>
+              <div class="event-time">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                7:00 PM - 9:00 PM
+              </div>
+              <div class="event-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Community Center, Main Hall
+              </div>
+              <p class="event-description">Discuss bike lane proposals, street lighting improvements, and traffic safety measures for our neighborhood.</p>
+              <div class="event-tags">
+                <span class="tag">Transportation</span>
+                <span class="tag">Safety</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="event-card">
+            <div class="event-date">
+              <div class="month">MAY</div>
+              <div class="day">08</div>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Community Events Planning</h4>
+              <div class="event-time">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                7:00 PM - 9:00 PM
+              </div>
+              <div class="event-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Community Center, Main Hall
+              </div>
+              <p class="event-description">Plan summer festivals, farmers market schedule, and volunteer coordination for upcoming community events.</p>
+              <div class="event-tags">
+                <span class="tag">Events</span>
+                <span class="tag">Volunteer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calendar-footer">
+          <p class="muted">All town halls are held on the second Tuesday of each month at 7:00 PM. Free childcare available with advance notice.</p>
+          <div class="calendar-actions">
+            <button id="subscribeCalendar" class="btn ghost">Subscribe to Calendar</button>
+            <button id="rsvpMeeting" class="btn primary">RSVP for Next Meeting</button>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="about" class="about">
       <div class="container about-grid">
         <div>
-          <h3 class="section-title">About</h3>
-          <p class="muted">This is a demo voting site inspired by Iconoir’s minimal, playful style. It reuses similar motion cues: parallax blobs, progressive counters, clean cards, and micro-interactions.</p>
-          <p class="muted">For a real deployment, connect the votes to a backend or serverless DB. Here we use localStorage to simulate single-vote enforcement per poll.</p>
+          <h3 class="section-title">About Community Voice</h3>
+          <p class="muted">Community Voice is a digital platform that empowers residents to participate in local decision-making. Vote on programs, initiatives, and community improvements that matter to you.</p>
+          <p class="muted">This is a demonstration platform. In a real deployment, votes would be securely stored and managed by your local community organization or municipality.</p>
         </div>
         <div class="cta-box">
-          <h4>Want more?</h4>
-          <p class="muted">Add authentication, share links, or multi-question surveys.</p>
-          <a class="btn ghost" href="#vote">Start Now</a>
+          <h4>Make Your Voice Heard</h4>
+          <p class="muted">Every vote counts in shaping our neighborhood's future.</p>
+          <a class="btn ghost" href="#vote">Vote Now</a>
         </div>
       </div>
     </section>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <span class="muted">© <span id="year"></span> Votenoir. Free for real.</span>
+        <span class="muted">© <span id="year"></span> Community Voice. Empowering local democracy.</span>
         <div class="socials">
           <a href="#" aria-label="Discord" class="icon-link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -319,6 +602,79 @@
         </div>
       </div>
     </footer>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>RSVP for Town Hall</h3>
+          <button class="modal-close" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="event-info">
+            <h4>Community Budget Planning</h4>
+            <div class="event-meta">
+              <div class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                February 13, 2025 at 7:00 PM - 9:00 PM
+              </div>
+              <div class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Community Center, Main Hall
+              </div>
+            </div>
+          </div>
+          
+          <form id="rsvpForm" class="rsvp-form">
+            <div class="form-group">
+              <label for="rsvpName">Full Name *</label>
+              <input type="text" id="rsvpName" name="name" required class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="rsvpEmail">Email Address (optional)</label>
+              <input type="email" id="rsvpEmail" name="email" class="form-control">
+              <small class="form-help">For meeting reminders and updates</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="rsvpPhone">Phone Number (optional)</label>
+              <input type="tel" id="rsvpPhone" name="phone" class="form-control">
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="rsvpChildcare" name="childcare">
+                <span class="checkbox-custom"></span>
+                I need free childcare during the meeting
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label for="rsvpComments">Comments or Questions (optional)</label>
+              <textarea id="rsvpComments" name="comments" rows="3" class="form-control" placeholder="Any topics you'd like to discuss or accessibility needs..."></textarea>
+            </div>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn ghost" id="cancelRSVP">Cancel</button>
+          <button type="submit" form="rsvpForm" class="btn primary" id="submitRSVP">Confirm RSVP</button>
+        </div>
+      </div>
+    </div>
 
     <script src="./app.js"></script>
   </body>
