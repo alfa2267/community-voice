@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="24" viewBox="0 0 160 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .w { font: 700 18px 'DM Sans', Arial, sans-serif; letter-spacing: -0.02em; }
+  </style>
+  <text x="0" y="17" class="w" fill="#0C0C0C">Votenoir</text>
+</svg>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Votenoir — Vote Your Favorite</title>
+    <meta name="description" content="A sleek, animated voting site inspired by Iconoir styling." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">
+          <svg class="brand-mark" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+            <path d="M7 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M12 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <img class="brand-text" src="./assets/logo.svg" alt="Votenoir" />
+        </a>
+        <nav class="nav">
+          <a href="#pick" class="nav-link">Pick</a>
+          <a href="#vote" class="nav-link">Vote</a>
+          <a href="#results" class="nav-link">Results</a>
+          <a href="#about" class="nav-link">About</a>
+          <button class="hamburger" id="menuToggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Parallax background shapes -->
+    <div class="parallax">
+      <div class="blob b1" data-parallax-factor="0.75"></div>
+      <div class="blob b2" data-parallax-factor="1.5"></div>
+      <div class="blob b3" data-parallax-factor="0.5"></div>
+      <div class="blob b4" data-parallax-factor="1.25"></div>
+      <div class="blob b5" data-parallax-factor="2"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-line">Say hello</h1>
+        <h1 class="hero-line accent">to your new free voting hub.</h1>
+        <p class="subtitle">
+          A high-quality, minimalist experience for instant polls. Smooth animations. Clean typography.
+          100% free.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#vote">Start Voting</a>
+          <a class="btn ghost" href="#results">View Results</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pick Grid (filter-like) -->
+    <section id="pick" class="pick">
+      <div class="container">
+        <h2 class="section-title">Pick Items to Vote On</h2>
+        <p class="section-subtitle">Hover an item to choose. Top button = Yes, bottom button = No.</p>
+        <div class="filters" role="tablist" aria-label="Filter icons">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="3d" role="tab" aria-selected="false">3D Editor</button>
+          <button class="filter-btn" data-filter="geometry" role="tab" aria-selected="false">Geometry</button>
+          <button class="filter-btn" data-filter="shapes" role="tab" aria-selected="false">Shapes</button>
+        </div>
+
+        <div class="filter-grid">
+          <!-- Sample tiles (replace with real items/images/icons) -->
+          <div class="tile" data-item-id="arc3d" data-tags="3d,geometry">
+            <div class="tile-canvas">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16C22 10.48 17.52 6 12 6C6.48 6 2 10.48 2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="tile-title">arc3d</div>
+            <div class="tile-overlay">
+              <button class="tile-action yes" data-pick="yes">Yes</button>
+              <button class="tile-action no" data-pick="no">No</button>
+              <div class="tile-tools">
+                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-item-id="box3d" data-tags="3d,shapes">
+            <div class="tile-canvas">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7L12 2L21 7V17L12 22L3 17V7Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="tile-title">box3d</div>
+            <div class="tile-overlay">
+              <button class="tile-action yes" data-pick="yes">Yes</button>
+              <button class="tile-action no" data-pick="no">No</button>
+              <div class="tile-tools">
+                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-item-id="curve-array" data-tags="geometry,shapes">
+            <div class="tile-canvas">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12C6 6 18 6 22 12" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="tile-title">curve-array</div>
+            <div class="tile-overlay">
+              <button class="tile-action yes" data-pick="yes">Yes</button>
+              <button class="tile-action no" data-pick="no">No</button>
+              <div class="tile-tools">
+                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-item-id="extrude" data-tags="3d,geometry">
+            <div class="tile-canvas">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="tile-title">extrude</div>
+            <div class="tile-overlay">
+              <button class="tile-action yes" data-pick="yes">Yes</button>
+              <button class="tile-action no" data-pick="no">No</button>
+              <div class="tile-tools">
+                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pick-foot">
+          <span class="muted" id="pick-summary" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <div class="stat-number" data-count-to="1671">0</div>
+          <div class="stat-label">votes available right now</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-count-to="100">0%</div>
+          <div class="stat-label">free and open</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-count-to="109">0K</div>
+          <div class="stat-label">page views/month</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-count-to="41">0K</div>
+          <div class="stat-label">happy voters</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vote cards -->
+    <section id="vote" class="vote">
+      <div class="container">
+        <h2 class="section-title">Today’s Poll</h2>
+        <p class="section-subtitle">Pick your favorite. One vote per device. Results update instantly.</p>
+
+        <div class="cards">
+          <!-- Card Template Example -->
+          <article class="card" data-poll-id="best-icon-pack">
+            <div class="card-head">
+              <h3 class="card-title">Best Minimal Icon Pack</h3>
+              <span class="badge">Design</span>
+            </div>
+            <p class="card-desc">Which icon style do you prefer for your next project?</p>
+            <div class="options">
+              <button class="option" data-option="A">
+                <span class="dot"></span>
+                Iconoir-style
+              </button>
+              <button class="option" data-option="B">
+                <span class="dot"></span>
+                Material-style
+              </button>
+              <button class="option" data-option="C">
+                <span class="dot"></span>
+                Feather-style
+              </button>
+            </div>
+            <div class="results hidden">
+              <div class="bar" data-option="A"><span class="fill"></span><span class="label">Iconoir-style</span><span class="value">0%</span></div>
+              <div class="bar" data-option="B"><span class="fill"></span><span class="label">Material-style</span><span class="value">0%</span></div>
+              <div class="bar" data-option="C"><span class="fill"></span><span class="label">Feather-style</span><span class="value">0%</span></div>
+            </div>
+            <div class="foot">
+              <button class="btn ghost show-results">Show Results</button>
+              <span class="note" aria-live="polite"></span>
+            </div>
+          </article>
+
+          <article class="card" data-poll-id="best-framework">
+            <div class="card-head">
+              <h3 class="card-title">Frontend Framework You Love</h3>
+              <span class="badge">Web</span>
+            </div>
+            <p class="card-desc">Pick one to build a delightful UI next.</p>
+            <div class="options">
+              <button class="option" data-option="React"><span class="dot"></span>React</button>
+              <button class="option" data-option="Vue"><span class="dot"></span>Vue</button>
+              <button class="option" data-option="Svelte"><span class="dot"></span>Svelte</button>
+            </div>
+            <div class="results hidden">
+              <div class="bar" data-option="React"><span class="fill"></span><span class="label">React</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Vue"><span class="fill"></span><span class="label">Vue</span><span class="value">0%</span></div>
+              <div class="bar" data-option="Svelte"><span class="fill"></span><span class="label">Svelte</span><span class="value">0%</span></div>
+            </div>
+            <div class="foot">
+              <button class="btn ghost show-results">Show Results</button>
+              <span class="note" aria-live="polite"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results CTA -->
+    <section id="results" class="results-cta">
+      <div class="container">
+        <h2 class="section-title">Live Results</h2>
+        <p class="section-subtitle">Numbers update on vote. Stored locally for demo.</p>
+        <a class="btn primary" href="#vote">Vote Again (another poll)</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div>
+          <h3 class="section-title">About</h3>
+          <p class="muted">This is a demo voting site inspired by Iconoir’s minimal, playful style. It reuses similar motion cues: parallax blobs, progressive counters, clean cards, and micro-interactions.</p>
+          <p class="muted">For a real deployment, connect the votes to a backend or serverless DB. Here we use localStorage to simulate single-vote enforcement per poll.</p>
+        </div>
+        <div class="cta-box">
+          <h4>Want more?</h4>
+          <p class="muted">Add authentication, share links, or multi-question surveys.</p>
+          <a class="btn ghost" href="#vote">Start Now</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="muted">© <span id="year"></span> Votenoir. Free for real.</span>
+        <div class="socials">
+          <a href="#" aria-label="Discord" class="icon-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.5 16C10.5 18.5 13.5 18.5 18.5 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.5 17.5L16.5 19.5C16.5 19.5 20.6713 18.1717 22 16C22 15 22.5301 7.85339 19 5.5C17.5 4.5 15 4 15 4L14 6H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.52832 17.5L7.52832 19.5C7.52832 19.5 3.35699 18.1717 2.02832 16C2.02832 15 1.49823 7.85339 5.02832 5.5C6.52832 4.5 9.02832 4 9.02832 4L10.0283 6H12.0283" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8.5" cy="12" r="1.5" stroke="currentColor"/>
+              <circle cx="15.5" cy="12" r="1.5" stroke="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
