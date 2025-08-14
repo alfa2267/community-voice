@@ -76,82 +76,122 @@
           <button class="filter-btn" data-filter="shapes" role="tab" aria-selected="false">Shapes</button>
         </div>
 
-        <div class="filter-grid">
+        <div class="pick-layout">
+          <div class="pick-main">
+            <div class="filter-grid">
           <!-- Sample tiles (replace with real items/images/icons) -->
           <div class="tile" data-item-id="arc3d" data-tags="3d,geometry">
-            <div class="tile-canvas">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 16C22 10.48 17.52 6 12 6C6.48 6 2 10.48 2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="tile-title">arc3d</div>
-            <div class="tile-overlay">
-              <button class="tile-action yes" data-pick="yes">Yes</button>
-              <button class="tile-action no" data-pick="no">No</button>
-              <div class="tile-tools">
-                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16C22 10.48 17.52 6 12 6C6.48 6 2 10.48 2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">Yes</button>
+                <button class="tile-action no" data-pick="no">No</button>
+                <div class="tile-tools">
+                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+                </div>
               </div>
             </div>
+            <div class="tile-title">arc3d</div>
           </div>
 
           <div class="tile" data-item-id="box3d" data-tags="3d,shapes">
-            <div class="tile-canvas">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 7L12 2L21 7V17L12 22L3 17V7Z" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="tile-title">box3d</div>
-            <div class="tile-overlay">
-              <button class="tile-action yes" data-pick="yes">Yes</button>
-              <button class="tile-action no" data-pick="no">No</button>
-              <div class="tile-tools">
-                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 7L12 2L21 7V17L12 22L3 17V7Z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">Yes</button>
+                <button class="tile-action no" data-pick="no">No</button>
+                <div class="tile-tools">
+                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+                </div>
               </div>
             </div>
+            <div class="tile-title">box3d</div>
           </div>
 
           <div class="tile" data-item-id="curve-array" data-tags="geometry,shapes">
-            <div class="tile-canvas">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12C6 6 18 6 22 12" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="tile-title">curve-array</div>
-            <div class="tile-overlay">
-              <button class="tile-action yes" data-pick="yes">Yes</button>
-              <button class="tile-action no" data-pick="no">No</button>
-              <div class="tile-tools">
-                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 12C6 6 18 6 22 12" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">Yes</button>
+                <button class="tile-action no" data-pick="no">No</button>
+                <div class="tile-tools">
+                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+                </div>
               </div>
             </div>
+            <div class="tile-title">curve-array</div>
           </div>
 
           <div class="tile" data-item-id="extrude" data-tags="3d,geometry">
-            <div class="tile-canvas">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="tile-title">extrude</div>
-            <div class="tile-overlay">
-              <button class="tile-action yes" data-pick="yes">Yes</button>
-              <button class="tile-action no" data-pick="no">No</button>
-              <div class="tile-tools">
-                <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
-                <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+            <div class="tile-visual">
+              <div class="tile-canvas">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="tile-overlay">
+                <button class="tile-action yes" data-pick="yes">Yes</button>
+                <button class="tile-action no" data-pick="no">No</button>
+                <div class="tile-tools">
+                  <button class="tool-btn copy-svg" aria-label="Copy SVG">Copy SVG</button>
+                  <button class="tool-btn download-svg" aria-label="Download SVG">Download</button>
+                </div>
               </div>
             </div>
+            <div class="tile-title">extrude</div>
           </div>
         </div>
-
         <div class="pick-foot">
           <span class="muted" id="pick-summary" aria-live="polite"></span>
         </div>
       </div>
-    </section>
+      <aside class="pick-aside">
+        <div class="aside sticky">
+          <div class="aside-card search-card">
+            <input id="pick-search" class="search-input" type="search" placeholder="Search..." aria-label="Search items" />
+          </div>
+          <div class="aside-card sponsor-card" aria-label="Our sponsor">
+            <div class="sponsor-mark">⚡</div>
+            <div class="sponsor-title">Expand Your Icon Collection</div>
+            <p class="muted">with Streamline</p>
+            <button class="btn ghost small" type="button">170,000 Vector Icons</button>
+            <div class="muted tiny">Our sponsor</div>
+          </div>
+          <div class="aside-card customize-card">
+            <div class="aside-title">Customize</div>
+            <div class="aside-control">
+              <label for="opt-size">Optical Size</label>
+              <input id="opt-size" type="range" min="16" max="48" value="24" />
+            </div>
+            <div class="aside-control">
+              <label for="stroke">Stroke Weight</label>
+              <input id="stroke" type="range" min="1" max="3" step="0.1" value="1.5" />
+            </div>
+            <div class="aside-control">
+              <label for="color">Color</label>
+              <input id="color" type="color" value="#0c0c0c" />
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
 
     <!-- Stats -->
     <section class="stats">

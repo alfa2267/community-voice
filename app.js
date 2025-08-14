@@ -3,6 +3,13 @@
 // Helpers
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+function debounce(fn, wait = 100) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), wait);
+  };
+}
 
 const storage = {
   get(key, fallback) {
@@ -197,6 +204,7 @@ function initPickGrid() {
     saved[id] = pick;
     localStorage.setItem(storageKey, JSON.stringify(saved));
     applyTileState(tile, pick);
+    playBallotAnim(tile, pick);
     updatePickSummary(summaryEl, saved);
   });
 
@@ -249,6 +257,39 @@ function updatePickSummary(el, map) {
 
 function safeParse(v) { try { return JSON.parse(v); } catch { return null; } }
 
+// Ballot animation inside a tile
+function ensureBallotOverlay(tile) {
+  const visual = tile.querySelector('.tile-visual') || tile.querySelector('.tile-canvas')?.parentElement || tile;
+  let overlay = visual.querySelector('.ballot-anim');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'ballot-anim';
+    overlay.style.color = getComputedStyle(tile).color;
+    overlay.innerHTML = `
+      <svg viewBox="0 0 80 80" aria-hidden="true">
+        <g class="box" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="18" y="32" width="44" height="30" rx="4"/>
+          <path class="acc" d="M28 28h24"/>
+        </g>
+        <rect class="paper" x="33" y="8" width="14" height="18" rx="1.5" fill="currentColor" stroke="none"/>
+      </svg>`;
+    visual.appendChild(overlay);
+  }
+  return overlay;
+}
+
+function playBallotAnim(tile, type /* 'yes' | 'no' */) {
+  const overlay = ensureBallotOverlay(tile);
+  overlay.classList.remove('yes', 'no', 'play');
+  if (type === 'yes') overlay.classList.add('yes'); else if (type === 'no') overlay.classList.add('no');
+  // Retrigger animation
+  // Force reflow
+  void overlay.offsetWidth;
+  overlay.classList.add('play');
+  // Remove play after finished so it can replay
+  setTimeout(() => overlay.classList.remove('play'), 800);
+}
+
 // Filters for pick grid
 function initPickFilters() {
   const wrapper = document.querySelector('.filters');
@@ -257,12 +298,20 @@ function initPickFilters() {
 
   const buttons = Array.from(wrapper.querySelectorAll('.filter-btn'));
   const tiles = Array.from(grid.querySelectorAll('.tile'));
+  const searchInput = document.getElementById('pick-search');
 
-  function applyFilter(key) {
+  let activeKey = 'all';
+  let query = '';
+
+  function applyFilters() {
+    const q = query.trim();
     tiles.forEach(tile => {
       const tags = (tile.getAttribute('data-tags') || '').toLowerCase();
-      const match = key === 'all' || tags.split(/\s*,\s*/).includes(key);
-      tile.style.display = match ? '' : 'none';
+      const id = (tile.getAttribute('data-item-id') || '').toLowerCase();
+      const title = (tile.querySelector('.tile-title')?.textContent || '').toLowerCase();
+      const keyMatch = activeKey === 'all' || tags.split(/\s*,\s*/).includes(activeKey);
+      const textMatch = !q || tags.includes(q) || id.includes(q) || title.includes(q);
+      tile.style.display = keyMatch && textMatch ? '' : 'none';
     });
   }
 
@@ -273,13 +322,23 @@ function initPickFilters() {
       b.classList.toggle('active', b === btn);
       b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
     });
-    const key = (btn.getAttribute('data-filter') || 'all').toLowerCase();
-    applyFilter(key);
+    activeKey = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+    applyFilters();
   });
 
   // Initial
   const active = buttons.find(b => b.classList.contains('active'));
-  applyFilter((active?.getAttribute('data-filter') || 'all').toLowerCase());
+  activeKey = (active?.getAttribute('data-filter') || 'all').toLowerCase();
+  applyFilters();
+
+  // Search input
+  if (searchInput) {
+    const debounced = debounce((v) => {
+      query = (v || '').toLowerCase();
+      applyFilters();
+    }, 80);
+    searchInput.addEventListener('input', (e) => debounced(e.target.value));
+  }
 }
 
 // Serialize an inline SVG element to string with xmlns
