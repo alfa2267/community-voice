@@ -39,7 +39,7 @@ A modern, interactive community voting platform designed for local civic engagem
 
 ## 🚀 Live Demo
 
-**[View Live Site](https://alfa2267.github.io/vote-site-iconoir-style/)**
+**[View Live Site](https://alfa2267.github.io/)**
 
 ## 🛠️ Technical Stack
 
@@ -112,3 +112,18 @@ This project uses automated PR checks for quality assurance. All contributions r
 ## 📄 License
 
 Proprietary. All rights reserved.
+
+<!-- PROJECT-META-START -->
+  ```yaml
+  project:
+    name: "Community Voice"
+    slug: "community-voice"
+    description: "A modern, interactive community voting platform designed for local civic engagement. Built with vanilla JavaScript, featuring real-time voting, data export capabilities, and a responsive design that works seamlessly across all devices"
+    status: "active"
+    category: "web-app"
+    tech_stack: ["Pure HTML5", "CSS3", "Vanilla JavaScript"]
+    demo_url: "https://alfa2267.github.io/community-vote"
+    show_in_nav: true
+    icon: "dashboard"
+    features: ["Community Program Voting", "Live Poll System"]
+
