@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Voice - Voting Platform</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        .project-header p {
+            margin: 0 0 2rem 0;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn.primary {
+            background: white;
+            color: #1d4ed8;
+        }
+        
+        .btn.primary:hover {
+            background: #f1f5f9;
+            color: #1e40af;
+        }
+        
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .project-description {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-description h2 {
+            margin: 0 0 1rem 0;
+            color: #1e293b;
+            font-size: 1.8rem;
+        }
+        
+        .project-description p {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #1e293b;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .tech-stack {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tech-stack h2 {
+            margin: 0 0 1.5rem 0;
+            color: #1e293b;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .project-header p {
+                font-size: 1.1rem;
+            }
+            
+            .project-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-header">
+        <h1>🗳️ Community Voice</h1>
+        <p>A modern, interactive community voting platform built with vanilla JavaScript, featuring real-time voting, JSON export, and responsive design.</p>
+        
+        <div class="project-links">
+            <a href="https://alfa2267.github.io/vote-site-iconoir-style/" target="_blank" class="btn primary">
+                🚀 View Live Demo
+            </a>
+            <a href="https://github.com/alfa2267/vote-site-iconoir-style" target="_blank" class="btn">
+                📁 View Source Code
+            </a>
+            <a href="https://github.com/alfa2267/vote-site-iconoir-style/archive/refs/heads/main.zip" class="btn">
+                📥 Download Project
+            </a>
+        </div>
+    </div>
+    
+    <div class="project-content">
+        <div class="project-description">
+            <h2>Project Overview</h2>
+            <p>Community Voice is a comprehensive voting platform designed for local community engagement. It allows residents to vote on programs, participate in polls, and provides organizers with detailed analytics through JSON export functionality.</p>
+            <p>The project showcases modern web development practices with clean, semantic HTML, responsive CSS Grid/Flexbox layouts, and vanilla JavaScript for all interactions. No frameworks required!</p>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">1,560+</span>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Vanilla JS</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <div class="stat-label">Major Features</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">📱</span>
+                <div class="stat-label">Fully Responsive</div>
+            </div>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🗳️</span>
+                <h3>Community Program Voting</h3>
+                <p>Interactive +/- voting on community initiatives with animated ballot drops and real-time vote tracking.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Live Poll System</h3>
+                <p>Multiple choice polls with instant result visualization and percentage calculations.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">👤</span>
+                <h3>Voter Profile System</h3>
+                <p>Demographic collection with persistent data storage and vote count tracking.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📅</span>
+                <h3>Town Hall Calendar</h3>
+                <p>Event calendar with ICS export and RSVP modal forms for community meetings.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📄</span>
+                <h3>JSON Data Export</h3>
+                <p>Complete voting data export with timestamps, demographics, and detailed analytics.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🎨</span>
+                <h3>Modern UI/UX</h3>
+                <p>Clean design with smooth animations, hover effects, and mobile-first responsive layout.</p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <h2>Technical Implementation</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3 Grid & Flexbox</span>
+                <span class="tech-tag">Vanilla JavaScript</span>
+                <span class="tech-tag">LocalStorage API</span>
+                <span class="tech-tag">CSS Custom Properties</span>
+                <span class="tech-tag">Responsive Design</span>
+                <span class="tech-tag">GitHub Pages</span>
+                <span class="tech-tag">ICS Calendar Export</span>
+                <span class="tech-tag">JSON Data Management</span>
+                <span class="tech-tag">Form Validation</span>
+                <span class="tech-tag">Modal Systems</span>
+                <span class="tech-tag">Animation & Transitions</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
