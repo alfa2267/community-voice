@@ -125,5 +125,11 @@ Proprietary. All rights reserved.
     demo_url: "https://alfa2267.github.io/community-vote"
     show_in_nav: true
     icon: "dashboard"
+    metrics:
+      business_value: 350    # 0-500 scale
+      complexity: 250       # 0-500 scale
+      time_spent: 50       # 0-500 scale (hours or relative)
+      fun_rating: 450       # 0-500 scale
     features: ["Community Program Voting", "Live Poll System"]
-
+    created_date: "2025-08-14"
+    updated_date: "2025-08-15"
