@@ -123,6 +123,7 @@ Proprietary. All rights reserved.
     category: "web-app"
     tech_stack: ["Pure HTML5", "CSS3", "Vanilla JavaScript"]
     demo_url: "https://alfa2267.github.io/community-vote"
+    repo_url: "https://github.com/alfa2267/community-vote"
     show_in_nav: true
     icon: "dashboard"
     metrics:
@@ -133,3 +134,5 @@ Proprietary. All rights reserved.
     features: ["Community Program Voting", "Live Poll System"]
     created_date: "2025-08-14"
     updated_date: "2025-08-15"
+```
+<!-- PROJECT-META-END -->
