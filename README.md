@@ -122,8 +122,8 @@ Proprietary. All rights reserved.
     status: "active"
     category: "web-app"
     tech_stack: ["Pure HTML5", "CSS3", "Vanilla JavaScript"]
-    demo_url: "https://alfa2267.github.io/community-vote"
-    repo_url: "https://github.com/alfa2267/community-vote"
+    demo_url: "https://alfa2267.github.io/community-voice"
+    repo_url: "https://github.com/alfa2267/community-voice"
     show_in_nav: true
     icon: "dashboard"
     metrics:
